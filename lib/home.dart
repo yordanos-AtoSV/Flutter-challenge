@@ -6,18 +6,23 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-    bool isLeftTextSelected = true;
+  bool isLeftTextSelected = true;
+
+  List<Map<String, dynamic>> iconDataList = [
+    {'icon': Icons.man, 'number': 1, 'size': 24.0},
+    {'icon': Icons.man, 'number': 0, 'size': 20.0},
+    {'icon': Icons.child_care, 'number': 0, 'size': 18.0},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 253, 250, 250),
+      backgroundColor: Color.fromARGB(255, 239, 237, 237),
       body: Stack(children: [
         SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Stack(
-                children: [
+              Stack(children: [
                 Container(
                   width: 400,
                   height: 400,
@@ -157,12 +162,12 @@ class _HomeState extends State<Home> {
                                       isLeftTextSelected = true;
                                     });
                                   },
-                                  child:  Text(
+                                  child: Text(
                                     "Return",
                                     style: TextStyle(
                                         color: !isLeftTextSelected
                                             ? Color.fromARGB(255, 254, 255, 255)
-                                            :Color.fromARGB(255, 68, 58, 97),
+                                            : Color.fromARGB(255, 68, 58, 97),
                                         fontSize: 16,
                                         letterSpacing: 1),
                                   ),
@@ -170,7 +175,7 @@ class _HomeState extends State<Home> {
                               ),
                             ),
                           ),
-                 Expanded(
+                          Expanded(
                             child: Padding(
                               padding: const EdgeInsets.all(6.0),
                               child: Container(
@@ -186,7 +191,7 @@ class _HomeState extends State<Home> {
                                       isLeftTextSelected = false;
                                     });
                                   },
-                                  child:  Text(
+                                  child: Text(
                                     "One-Way",
                                     style: TextStyle(
                                         color: isLeftTextSelected
@@ -284,7 +289,7 @@ class _HomeState extends State<Home> {
                         ),
                         Row(
                           children: const [
-                            const SizedBox(width: 30),
+                            SizedBox(width: 30),
                             Text(
                               "Bole International Airport",
                               style: TextStyle(
@@ -300,65 +305,425 @@ class _HomeState extends State<Home> {
                   ],
                 )
               ]),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 116,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 241, 238, 238),
+                        border: Border(
+                          right: BorderSide(
+                            color: Color.fromARGB(255, 187, 184, 184),
+                            width: 1.0,
+                          ),
+                          bottom: BorderSide(
+                            color: Color.fromARGB(255, 187, 184, 184),
+                            width: 1.0,
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            const Text(
+                              "Departure Date",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 89, 87, 87),
+                                fontSize: 16,
+                                fontFamily: "Poppins",
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Row(
+                                children: [
+                                  const SizedBox(width: 15),
+                                  const SizedBox(
+                                    child: Text(
+                                      "25",
+                                      style: TextStyle(
+                                          color: Color.fromARGB(255, 1, 36, 96),
+                                          fontSize: 50,
+                                          fontFamily: "Poppins"),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: const [
+                                      Text(
+                                        "Apr",
+                                        style: TextStyle(
+                                            fontFamily: "Poppins",
+                                            color: Colors.black,
+                                            fontSize: 20,
+                                            letterSpacing: 1),
+                                      ),
+                                      Text(
+                                        "Tuesday",
+                                        style: TextStyle(
+                                            fontFamily: "Poppins",
+                                            color: Colors.black,
+                                            fontSize: 16),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: 116,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 241, 238, 238),
+                        border: Border(
+                          right: BorderSide(
+                            color: Color.fromARGB(255, 187, 184, 184),
+                            width: 1.0,
+                          ),
+                          bottom: BorderSide(
+                            color: Color.fromARGB(255, 187, 184, 184),
+                            width: 1.0,
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            const Text(
+                              "Return Date",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 89, 87, 87),
+                                fontSize: 16,
+                                fontFamily: "Poppins",
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Row(
+                                children: [
+                                  const SizedBox(width: 15),
+                                  const SizedBox(
+                                    child: Text(
+                                      "10",
+                                      style: TextStyle(
+                                          color: Color.fromARGB(255, 1, 36, 96),
+                                          fontSize: 50,
+                                          fontFamily: "Poppins"),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: const [
+                                      Text(
+                                        "May",
+                                        style: TextStyle(
+                                            fontFamily: "Poppins",
+                                            color: Colors.black,
+                                            fontSize: 20,
+                                            letterSpacing: 1),
+                                      ),
+                                      Text(
+                                        "Wednesday",
+                                        style: TextStyle(
+                                            fontFamily: "Poppins",
+                                            color: Colors.black,
+                                            fontSize: 16),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 80,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 241, 238, 238),
+                        border: Border(
+                          right: BorderSide(
+                            color: Color.fromARGB(255, 187, 184, 184),
+                            width: 1.0,
+                          ),
+                          bottom: BorderSide(
+                            color: Color.fromARGB(255, 187, 184, 184),
+                            width: 1.0,
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text(
+                              "Cabin Class",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 89, 87, 87),
+                                fontSize: 16,
+                                fontFamily: "Poppins",
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                final snackBar = SnackBar(
+                                  content: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "Cabin Class",
+                                            style: TextStyle(
+                                                color: Colors.grey,
+                                                fontWeight: FontWeight.bold,
+                                                fontFamily: 'Poppins',
+                                                fontSize: 20),
+                                          ),
+                                          SizedBox(width: 169),
+                                          Text(
+                                            "Cancel",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontFamily: "Poppins",
+                                                fontSize: 15),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 3),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "Economy",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontFamily: "Poppins",
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      ),
+                                      Divider(
+                                        color:
+                                            Color.fromARGB(255, 141, 136, 136),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "Bussiness",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontFamily: "Poppins",
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      ),
+                                      Divider(
+                                        color:
+                                            Color.fromARGB(255, 141, 136, 136),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "First",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontFamily: "Poppins",
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      ),
+                                      Divider(
+                                        color:
+                                            Color.fromARGB(255, 141, 136, 136),
+                                      ),
+                                      const SizedBox(height: 5),
+                                    ],
+                                  ),
+                                  backgroundColor: Colors.white,
+                                );
 
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(snackBar);
+                              },
+                              child: Text(
+                                "Economy",
+                                style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontSize: 25,
+                                    color: Colors.black),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: 80,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 241, 238, 238),
+                        border: Border(
+                          right: BorderSide(
+                            color: Color.fromARGB(255, 187, 184, 184),
+                            width: 1.0,
+                          ),
+                          bottom: BorderSide(
+                            color: Color.fromARGB(255, 187, 184, 184),
+                            width: 1.0,
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text(
+                              "Passengers",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 89, 87, 87),
+                                fontSize: 16,
+                                fontFamily: "Poppins",
+                              ),
+                            ),
+                            Row(
+                              children: List.generate(
+                                iconDataList.length,
+                                (index) => Row(
+                                  children: [
+                                    Icon(
+                                      iconDataList[index]['icon'],
+                                      size: iconDataList[index]['size'],
+                                    ),
+                                    SizedBox(
+                                        width:
+                                            5), // Adjust the spacing between the icon and the number
+                                    Text(
+                                      '${iconDataList[index]['number']}',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 22),
+                                    ),
+                                    SizedBox(width: 15),
+                                  ],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 35),
+              Container(
+                width: 320,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Home()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    )),
+                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                        const EdgeInsets.all(16.0)),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Color.fromARGB(255, 235, 187, 64)),
+                  ),
+                  child: const Text(
+                    'Search Flights',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Color.fromARGB(255, 35, 34, 34),
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 90),
             ],
           ),
         ),
-        // Positioned(
-        //   left: 0,
-        //   right: 0,
-        //   bottom: 0,
-        //   child: Container(
-        //       height: 50,
-        //       color: Color.fromARGB(255, 255, 255, 255),
-        //       child: Padding(
-        //         padding: const EdgeInsets.only(left: 15.0, right: 15.0),
-        //         child: Stack(children: [
-        //           Row(
-        //             children: [
-        //               Expanded(
-        //                 child: IconButton(
-        //                   onPressed: () {
-        //                     // Add your button action here
-        //                   },
-        //                   icon: Icon(Icons.search),
-        //                   color: Colors.grey,
-        //                 ),
-        //               ),
-        //               Expanded(
-        //                 child: IconButton(
-        //                   onPressed: () {
-        //                     // Add your button action here
-        //                   },
-        //                   icon: Icon(Icons.cases_outlined),
-        //                   color: Colors.grey,
-        //                 ),
-        //               ),
-        //               // const SizedBox(width: 50),
-        //               Expanded(
-        //                 child: IconButton(
-        //                   onPressed: () {
-        //                     // Add your button action here
-        //                   },
-        //                   icon: Icon(Icons.notifications),
-        //                   color: Colors.grey,
-        //                 ),
-        //               ),
-        //               Expanded(
-        //                 child: IconButton(
-        //                   onPressed: () {
-        //                     // Add your button action here
-        //                   },
-        //                   icon: Icon(Icons.settings),
-        //                   color: Colors.grey,
-        //                 ),
-        //               ),
-        //             ],
-        //           ),
-        //         ]),
-        //       )),
-        // ),
+        Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  border: Border(
+                      top: BorderSide(
+                          width: 1,
+                          color: Color.fromARGB(255, 223, 221, 221)))),
+              height: 60,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _buildBottomBarItem('Search', Icons.search, () {
+                    // Handle home icon click
+                  }),
+                  _buildBottomBarItem('Booking', Icons.business_center, () {
+                    // Handle search icon click
+                  }),
+                  _buildBottomBarItem('Notifications', Icons.notifications, () {
+                    // Handle notifications icon click
+                  }),
+                  _buildBottomBarItem('Setting', Icons.settings, () {
+                    // Handle profile icon click
+                  }),
+                ],
+              ),
+            )),
       ]),
     );
   }
+}
+
+Widget _buildBottomBarItem(String label, IconData icon, Function() onPressed) {
+  return GestureDetector(
+    onTap: onPressed,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          color: Color.fromARGB(255, 131, 129, 129),
+        ),
+        SizedBox(height: 4),
+        Text(
+          label,
+          style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+        ),
+      ],
+    ),
+  );
 }
